@@ -1,0 +1,23 @@
+{
+  "name": "alg-bfx-sync-pairs-mongo",
+  "version": "1.0.0",
+  "description": "syncs pairs into a mongo db",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ezeswci/alg-bfx-sync-pairs-mongo.git"
+  },
+  "author": "Ezequiel Wernicke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ezeswci/alg-bfx-sync-pairs-mongo/issues"
+  },
+  "homepage": "https://github.com/ezeswci/alg-bfx-sync-pairs-mongo#readme",
+  "dependencies": {
+    "bitfinex-api-node": "^2.0.6",
+    "mongodb": "^3.2.7"
+  }
+}
