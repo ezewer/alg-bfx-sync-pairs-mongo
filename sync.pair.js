@@ -23,11 +23,11 @@ async function syncPair (db, pair) {
     await _syncPair(db, pair, minStart, maxEnd)
   }
 
-  if (newer && newer.mts < maxEnd) {
-    await _syncPair(db, pair, newer.mts, maxEnd)
+  if (newer && newer[0].mts < maxEnd) {
+    await _syncPair(db, pair, newer[0].mts, maxEnd)
     const older = await mongoQ._find(db, { pair }, collection, 1, 0, { mts: 1 })
-    if (older && older.mts > minStart) {
-      await _syncPair(db, pair, minStart, older.mts)
+    if (older && older[0].mts > minStart) {
+      await _syncPair(db, pair, minStart, older[0].mts)
     }
   }
 }
