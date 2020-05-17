@@ -38,6 +38,15 @@ function reqPubTrades (opts) {
   return getApiRest().trades(tradeSymbol, start, end, limit)
 }
 
+function reqTikerHistory (opts) {
+  const {
+    symbol, start, end, limit
+  } = opts
+
+  const tradeSymbol = `t${symbol.toUpperCase()}`
+  return getApiRest().tickersHistory([tradeSymbol], start, end, limit)
+}
+
 async function getPairs () {
   const rest = getApiRest()
   const allPairs = await rest.symbolDetails()
@@ -46,5 +55,6 @@ async function getPairs () {
 
 module.exports = {
   reqPubTrades,
+  reqTikerHistory,
   getPairs
 }
