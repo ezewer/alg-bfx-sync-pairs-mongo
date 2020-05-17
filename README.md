@@ -19,5 +19,6 @@ This would speed up transactions
 
 ```console
 use algo;
-db.pubTrades.createIndex({ pair: 1, mts: -1, id: -1 }, { background: true });
+db.pubTrades.createIndex({ pair: 1, mts: -1, id: -1 });
+db.tickers.createIndex({ pair: 1, mts: -1 });
 ```
